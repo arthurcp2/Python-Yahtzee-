@@ -3,4 +3,3 @@ def calcula_pontos_soma (l):
     for i in l:
         som+=i
     return som
-aashaj
