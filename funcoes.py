@@ -49,3 +49,24 @@ def calcula_pontos_sequencia_alta (l):
         return 30
     else:
         return 0
+#EX8
+def calcula_pontos_full_house (n):
+    dic={}
+    cont=0
+    p=0
+    for i in n:
+        p+=i
+        if i not in dic:
+            dic[i]=1
+        else:
+            dic[i]+=1
+    for e in dic:
+        cont +=1
+    if cont!=2:
+        return 0
+    s=[]
+    for m in dic.values():
+        s.append(m)
+    if s==[2,3] or s==[3,2]:
+        return p
+    return 0
