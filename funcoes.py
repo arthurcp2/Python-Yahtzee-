@@ -70,3 +70,17 @@ def calcula_pontos_full_house (n):
     if s==[2,3] or s==[3,2]:
         return p
     return 0
+#EX9
+def calcula_pontos_quadra (n):
+    dic={}
+    p=0
+    for i in n:
+        p+=i
+        if i not in dic:
+            dic[i]=1
+        else:
+            dic[i]+=1
+    for m in dic.values():
+        if m >=4:
+            return p
+    return 0
