@@ -84,3 +84,17 @@ def calcula_pontos_quadra (n):
         if m >=4:
             return p
     return 0
+#EX10
+def calcula_pontos_quina(n):
+    dic={}
+    p=0
+    for i in n:
+        p+=i
+        if i not in dic:
+            dic[i]=1
+        else:
+            dic[i]+=1
+    for m in dic.values():
+        if m >=5:
+            return 50
+    return 0
