@@ -93,7 +93,7 @@ def calcula_pontos_quina(n):
         if i not in dic:
             dic[i]=1
         else:
-            dic[i]+=1
+            ]            dic[i]+=1
     for m in dic.values():
         if m >=5:
             return 50
@@ -108,3 +108,12 @@ def calcula_pontos_regra_avancada(dados_rolados):
     dic["sequencia_alta"] += calcula_pontos_sequencia_alta(dados_rolados)
     dic["sequencia_baixa"] += calcula_pontos_sequencia_baixa(dados_rolados)
     return dic
+#EX12
+def faz_jogada (l,s,d):
+    if s.isdigit():
+        a=(calcula_pontos_regra_simples(l))
+        d['regra_simples'][int(s)]= a[int(s)]
+    else:
+        a= calcula_pontos_regra_avancada(l)
+        d['regra_avancada'][s]=a[s]
+    return d
