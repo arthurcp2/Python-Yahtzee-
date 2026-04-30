@@ -26,13 +26,13 @@ def calcula_pontos_regra_simples(lnu):
             dic[i]+=i
     return dic
 #EX5
-def calcula_pontos_soma (l):
+def calcula_pontos_soma(l):
     som=0
     for i in l:
         som+=i
     return som
 #EX6
-def calcula_pontos_sequencia_baixa (l):
+def calcula_pontos_sequencia_baixa(l):
     if 1 in l and 2 in l and 3 in l and 4 in l:
         return 15
     elif 2 in l and 3 in l and 4 in l and 5 in l:
@@ -42,7 +42,7 @@ def calcula_pontos_sequencia_baixa (l):
     else:
         return 0
 #EX7
-def calcula_pontos_sequencia_alta (l):
+def calcula_pontos_sequencia_alta(l):
     if 1 in l and 2 in l and 3 in l and 4 in l and 5 in l:
         return 30
     elif 2 in l and 3 in l and 4 in l and 5 in l and 6 in l:
@@ -50,7 +50,7 @@ def calcula_pontos_sequencia_alta (l):
     else:
         return 0
 #EX8
-def calcula_pontos_full_house (n):
+def calcula_pontos_full_house(n):
     dic={}
     cont=0
     p=0
@@ -71,7 +71,7 @@ def calcula_pontos_full_house (n):
         return p
     return 0
 #EX9
-def calcula_pontos_quadra (n):
+def calcula_pontos_quadra(n):
     dic={}
     p=0
     for i in n:
@@ -98,3 +98,13 @@ def calcula_pontos_quina(n):
         if m >=5:
             return 50
     return 0
+#EX11
+def calcula_pontos_regra_avancada(dados_rolados):
+    dic = {"cinco_iguais": 0,"full_house": 0,"quadra": 0, "sem_combinacao": 0,"sequencia_alta": 0,"sequencia_baixa": 0}
+    dic["cinco_iguais"] += calcula_pontos_quina(dados_rolados)
+    dic["full_house"] += calcula_pontos_full_house(dados_rolados)
+    dic["quadra"] += calcula_pontos_quadra(dados_rolados)
+    dic["sem_combinacao"] += calcula_pontos_soma(dados_rolados)
+    dic["sequencia_alta"] += calcula_pontos_sequencia_alta(dados_rolados)
+    dic["sequencia_baixa"] += calcula_pontos_sequencia_baixa(dados_rolados)
+    return dic
